@@ -22,10 +22,10 @@ namespace Projeto211375
 
         public static void AbrirConexao()
         {
-            Conexao = new MySqlConnection("server=localhost;port=3307;uid=root;pwd=etecjau");
-
             try
             {
+                Conexao = new MySqlConnection("server=localhost;port=3307;uid=root;pwd=etecjau");
+            
                 Conexao.Open();
             }
             catch (Exception ex)
@@ -57,10 +57,16 @@ namespace Projeto211375
                 Comando.ExecuteNonQuery();
 
                 Comando = new MySqlCommand(
-                    @"CREATE TABLE IF NOT EXISTE Cidades ();
-                    id INT AUTO_INCREMENT PRIMARY KEY,
-                    nome varchar(48),
-                    uf char(02)", Conexao);
+                    @"CREATE TABLE IF NOT EXISTS Cidades (
+                        id INT AUTO_INCREMENT,
+                        nome varchar(48),
+                        uf char(02),
+                        PRIMARY KEY (id)
+                    );", Conexao);
+
+                Comando.ExecuteNonQuery();
+
+                FecharConexao();
             }
             catch (Exception ex)
             {

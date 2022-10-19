@@ -1,4 +1,5 @@
-﻿using System;
+﻿ using Projeto211375.Views;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -20,6 +21,12 @@ namespace Projeto211375
         private void FrmMenu_Load(object sender, EventArgs e)
         {
             Banco.CriarBanco();
+        }
+
+        private void cidadeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmCidade form = new FrmCidade();
+            form.Show();
         }
     }
 }
