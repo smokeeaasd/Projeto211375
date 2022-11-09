@@ -66,6 +66,26 @@ namespace Projeto211375
 
                 Comando.ExecuteNonQuery();
 
+                // Marca
+                Comando = new MySqlCommand(
+                    @"CREATE TABLE IF NOT EXISTS Marca (
+                        id INT AUTO_INCREMENT,
+                        nome varchar(48),
+                        PRIMARY KEY (id)
+                    );", Conexao);
+
+                Comando.ExecuteNonQuery();
+
+                //Categoria
+                Comando = new MySqlCommand(
+                    @"CREATE TABLE IF NOT EXISTS Categoria (
+                        id INT AUTO_INCREMENT,
+                        nome varchar(48),
+                        PRIMARY KEY (id)
+                    );", Conexao);
+
+                Comando.ExecuteNonQuery();
+
                 FecharConexao();
             }
             catch (Exception ex)
