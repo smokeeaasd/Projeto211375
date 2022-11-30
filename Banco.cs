@@ -86,6 +86,22 @@ namespace Projeto211375
 
                 Comando.ExecuteNonQuery();
 
+                Comando = new MySqlCommand(
+                    @"CREATE TABLE IF NOT EXISTS Clientes (
+                        id INT AUTO_INCREMENT,
+                        nome varchar(40),
+                        id_cidade INT,
+                        data_nasc DATE,
+                        renda decimal(10, 2),
+                        cpf char(14),
+                        foto varchar(100),
+                        venda BOOLEAN,
+                        FOREIGN KEY (id_cidade) REFERENCES Cidades(id),
+                        PRIMARY KEY (id)
+                    );", Conexao);
+
+                Comando.ExecuteNonQuery();
+
                 FecharConexao();
             }
             catch (Exception ex)
