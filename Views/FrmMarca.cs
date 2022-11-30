@@ -25,7 +25,7 @@ namespace Projeto211375.Views
             {
                 if (control.GetType() == typeof(TextBox))
                 {
-                    control.Text = "";
+                    ((TextBox)control).Clear();
                 }
             }
         }
