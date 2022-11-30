@@ -7,7 +7,6 @@ using MySql.Data;
 using MySql.Data.MySqlClient;
 using System.Windows.Forms;
 using System.Data;
-using System.Data.SqlClient;
 
 namespace Projeto211375.Model
 {
@@ -31,7 +30,7 @@ namespace Projeto211375.Model
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.StackTrace, ex.Message, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -52,7 +51,7 @@ namespace Projeto211375.Model
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.StackTrace, ex.Message, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -72,7 +71,7 @@ namespace Projeto211375.Model
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.StackTrace, ex.Message, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -97,7 +96,7 @@ namespace Projeto211375.Model
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.StackTrace, ex.Message, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return null;
             }
         }
