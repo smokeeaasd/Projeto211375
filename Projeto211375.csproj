@@ -95,6 +95,7 @@
     </Compile>
     <Compile Include="Model\Categoria.cs" />
     <Compile Include="Model\Cidade.cs" />
+    <Compile Include="Model\Cliente.cs" />
     <Compile Include="Model\Marca.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -103,6 +104,12 @@
     </Compile>
     <Compile Include="Views\FrmCategoria.Designer.cs">
       <DependentUpon>FrmCategoria.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FrmCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FrmCliente.Designer.cs">
+      <DependentUpon>FrmCliente.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\FrmMarca.cs">
       <SubType>Form</SubType>
