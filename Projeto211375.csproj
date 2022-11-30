@@ -138,6 +138,9 @@
     <EmbeddedResource Include="Views\FrmCategoria.resx">
       <DependentUpon>FrmCategoria.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\FrmCliente.resx">
+      <DependentUpon>FrmCliente.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\FrmMarca.resx">
       <DependentUpon>FrmMarca.cs</DependentUpon>
     </EmbeddedResource>
