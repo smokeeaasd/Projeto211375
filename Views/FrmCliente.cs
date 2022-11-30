@@ -13,7 +13,8 @@ namespace Projeto211375.Views
 {
     public partial class FrmCliente : Form
     {
-        Cliente c;
+        Cliente cl;
+        Cidade ci;
         public FrmCliente()
         {
             InitializeComponent();
@@ -26,35 +27,58 @@ namespace Projeto211375.Views
                 if (control.GetType() == typeof(TextBox))
                 {
                     ((TextBox)control).Clear();
+                } else if (control.GetType() == typeof(ComboBox))
+                {
+                    ((ComboBox)control).SelectedIndex = -1;
+                } else if (control.GetType() == typeof(MaskedTextBox))
+                {
+                    ((MaskedTextBox)control).Clear();
+                } else if (control.GetType() == typeof(DateTimePicker))
+                {
+                    ((DateTimePicker)control).Value = DateTime.Now;
+                } else if (control.GetType() == typeof(PictureBox))
+                {
+                    ((PictureBox)control).ImageLocation = "";
+                } else if (control.GetType() == typeof(CheckBox))
+                {
+                    ((CheckBox)control).Checked = false;
                 }
             }
         }
 
         void CarregarGrid(string pesquisa)
         {
-            c = new Cliente()
+            cl = new Cliente()
             {
                 nome = pesquisa
             };
 
-            dgvClientes.DataSource = c.Consultar();
+            dgvClientes.DataSource = cl.Consultar();
         }
 
         private void FrmCliente_Load(object sender, EventArgs e)
         {
-            LimpaControles();
-            CarregarGrid("");
+            ci = new Cidade();
+            cboCidades.DataSource = ci.Consultar();
+            cboCidades.DisplayMember = "nome";
+            cboCidades.ValueMember = "id";
         }
 
         private void btnIncluir_Click(object sender, EventArgs e)
         {
             if (txtNome.Text == string.Empty) return;
 
-            c = new Cliente()
+            cl = new Cliente()
             {
                 nome = txtNome.Text,
+                id_cidade = (int)cboCidades.SelectedValue,
+                data_nasc = dtpDataNasc.Value,
+                renda = double.Parse(txtRenda.Text),
+                cpf = mskCPF.Text,
+                foto = picFoto.ImageLocation,
+                venda = chkVenda.Checked
             };
-            c.Incluir();
+            cl.Incluir();
 
             LimpaControles();
             CarregarGrid("");
@@ -64,13 +88,19 @@ namespace Projeto211375.Views
         {
             if (txtID.Text == string.Empty) return;
 
-            c = new Cliente()
+            cl = new Cliente()
             {
                 id = int.Parse(txtID.Text),
                 nome = txtNome.Text,
+                id_cidade = (int)cboCidades.SelectedValue,
+                data_nasc = dtpDataNasc.Value,
+                renda = double.Parse(txtRenda.Text),
+                cpf = mskCPF.Text,
+                foto = picFoto.ImageLocation,
+                venda = chkVenda.Checked
             };
 
-            c.Alterar();
+            cl.Alterar();
 
             LimpaControles();
 
@@ -81,14 +111,14 @@ namespace Projeto211375.Views
         {
             if (txtID.Text == string.Empty) return;
 
-            if (MessageBox.Show("Deseja excluir a Cliente?", "Exclusão", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            if (MessageBox.Show("Deseja excluir o Cliente?", "Exclusão", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                c = new Cliente()
+                cl = new Cliente()
                 {
                     id = int.Parse(txtID.Text)
                 };
 
-                c.Excluir();
+                cl.Excluir();
 
                 LimpaControles();
 
@@ -119,7 +149,31 @@ namespace Projeto211375.Views
             {
                 txtID.Text = dgvClientes.CurrentRow.Cells["id"].Value.ToString();
                 txtNome.Text = dgvClientes.CurrentRow.Cells["nome"].Value.ToString();
+                cboCidades.Text = dgvClientes.CurrentRow.Cells["cidade"].Value.ToString();
+                txtUF.Text = dgvClientes.CurrentRow.Cells["uf"].Value.ToString();
+                chkVenda.Checked = (bool)dgvClientes.CurrentRow.Cells["venda"].Value;
+                mskCPF.Text = dgvClientes.CurrentRow.Cells["cpf"].Value.ToString();
+                dtpDataNasc.Text = dgvClientes.CurrentRow.Cells["data_nasc"].Value.ToString();
+                txtRenda.Text = dgvClientes.CurrentRow.Cells["renda"].Value.ToString();
+                picFoto.ImageLocation = dgvClientes.CurrentRow.Cells["foto"].Value.ToString();
             }
+        }
+
+        private void cboCidades_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cboCidades.SelectedIndex != -1)
+            {
+                DataRowView reg = (DataRowView)cboCidades.SelectedItem;
+                txtUF.Text = reg["uf"].ToString();
+            }
+        }
+
+        private void picFoto_Click(object sender, EventArgs e)
+        {
+            ofdArquivo.InitialDirectory = "D:\\Fotos\\Clientes\\";
+            ofdArquivo.FileName = "";
+            ofdArquivo.ShowDialog();
+            picFoto.ImageLocation = ofdArquivo.FileName;
         }
     }
 }
