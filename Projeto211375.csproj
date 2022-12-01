@@ -126,6 +126,12 @@
     <Compile Include="Views\FrmCidade.Designer.cs">
       <DependentUpon>FrmCidade.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\FrmProduto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FrmProduto.Designer.cs">
+      <DependentUpon>FrmProduto.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\FrmVendas.cs">
       <SubType>Form</SubType>
     </Compile>
