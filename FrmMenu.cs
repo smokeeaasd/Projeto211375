@@ -40,5 +40,11 @@ namespace Projeto211375
             FrmCategoria form = new FrmCategoria();
             form.Show();
         }
+
+        private void clienteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmCliente form = new FrmCliente();
+            form.Show();
+        }
     }
 }
