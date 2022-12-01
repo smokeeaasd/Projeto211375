@@ -7,11 +7,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Projeto211375.Model;
 
 namespace Projeto211375.Views
 {
     public partial class FrmVendas : Form
     {
+        double total;
+
+        Cliente c;
+        
         public FrmVendas()
         {
             InitializeComponent();

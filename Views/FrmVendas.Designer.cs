@@ -422,7 +422,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(890, 796);
+            this.ClientSize = new System.Drawing.Size(704, 665);
             this.Controls.Add(this.lblTotal);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.btnGravar);

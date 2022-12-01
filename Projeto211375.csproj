@@ -97,6 +97,7 @@
     <Compile Include="Model\Cidade.cs" />
     <Compile Include="Model\Cliente.cs" />
     <Compile Include="Model\Marca.cs" />
+    <Compile Include="Model\Produto.cs" />
     <Compile Include="Model\VendaCab.cs" />
     <Compile Include="Model\VendaDet.cs" />
     <Compile Include="Program.cs" />

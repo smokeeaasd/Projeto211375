@@ -126,6 +126,20 @@ namespace Projeto211375
 
                 Comando.ExecuteNonQuery();
 
+                Comando = new MySqlCommand(
+                    @"CREATE TABLE IF NOT EXISTS Produtos (
+                        id INT AUTO_INCREMENT,
+                        descricao VARCHAR(40),
+                        id_categoria INT,
+                        id_marca INT,
+                        estoque DECIMAL(10, 3),
+                        valor_venda DECIMAL(10, 2),
+                        foto VARCHAR(100),      
+                        PRIMARY KEY (id)
+                    );", Conexao);
+
+                Comando.ExecuteNonQuery();
+
                 FecharConexao();
             }
             catch (Exception ex)
