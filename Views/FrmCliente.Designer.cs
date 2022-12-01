@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txtNome = new System.Windows.Forms.TextBox();
@@ -44,13 +45,25 @@
             this.chkVenda = new System.Windows.Forms.CheckBox();
             this.label3 = new System.Windows.Forms.Label();
             this.cboCidades = new System.Windows.Forms.ComboBox();
+            this.txtUF = new System.Windows.Forms.TextBox();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.label5 = new System.Windows.Forms.Label();
+            this.mskCPF = new System.Windows.Forms.MaskedTextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.dtpDataNasc = new System.Windows.Forms.DateTimePicker();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.txtRenda = new System.Windows.Forms.TextBox();
+            this.picFoto = new System.Windows.Forms.PictureBox();
+            this.ofdArquivo = new System.Windows.Forms.OpenFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picFoto)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 9);
+            this.label1.Location = new System.Drawing.Point(9, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(43, 13);
             this.label1.TabIndex = 0;
@@ -59,7 +72,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 55);
+            this.label2.Location = new System.Drawing.Point(7, 55);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(42, 13);
             this.label2.TabIndex = 2;
@@ -67,9 +80,9 @@
             // 
             // txtNome
             // 
-            this.txtNome.Location = new System.Drawing.Point(12, 71);
+            this.txtNome.Location = new System.Drawing.Point(10, 71);
             this.txtNome.Name = "txtNome";
-            this.txtNome.Size = new System.Drawing.Size(624, 20);
+            this.txtNome.Size = new System.Drawing.Size(251, 20);
             this.txtNome.TabIndex = 3;
             // 
             // btnIncluir
@@ -126,7 +139,7 @@
             // 
             this.txtPesquisa.Location = new System.Drawing.Point(15, 378);
             this.txtPesquisa.Name = "txtPesquisa";
-            this.txtPesquisa.Size = new System.Drawing.Size(681, 20);
+            this.txtPesquisa.Size = new System.Drawing.Size(624, 20);
             this.txtPesquisa.TabIndex = 11;
             // 
             // label4
@@ -140,7 +153,7 @@
             // 
             // btnPesquisar
             // 
-            this.btnPesquisar.Location = new System.Drawing.Point(700, 376);
+            this.btnPesquisar.Location = new System.Drawing.Point(645, 378);
             this.btnPesquisar.Name = "btnPesquisar";
             this.btnPesquisar.Size = new System.Drawing.Size(75, 23);
             this.btnPesquisar.TabIndex = 13;
@@ -156,13 +169,13 @@
             this.dgvClientes.Location = new System.Drawing.Point(15, 404);
             this.dgvClientes.Name = "dgvClientes";
             this.dgvClientes.ReadOnly = true;
-            this.dgvClientes.Size = new System.Drawing.Size(760, 337);
+            this.dgvClientes.Size = new System.Drawing.Size(705, 337);
             this.dgvClientes.TabIndex = 14;
             this.dgvClientes.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvClientes_CellClick);
             // 
             // txtID
             // 
-            this.txtID.Location = new System.Drawing.Point(15, 25);
+            this.txtID.Location = new System.Drawing.Point(10, 25);
             this.txtID.Name = "txtID";
             this.txtID.Size = new System.Drawing.Size(100, 20);
             this.txtID.TabIndex = 1;
@@ -180,7 +193,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(9, 108);
+            this.label3.Location = new System.Drawing.Point(7, 108);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(40, 13);
             this.label3.TabIndex = 16;
@@ -189,17 +202,109 @@
             // cboCidades
             // 
             this.cboCidades.FormattingEnabled = true;
-            this.cboCidades.Location = new System.Drawing.Point(12, 124);
+            this.cboCidades.Location = new System.Drawing.Point(10, 124);
             this.cboCidades.Name = "cboCidades";
             this.cboCidades.Size = new System.Drawing.Size(121, 21);
             this.cboCidades.TabIndex = 17;
+            // 
+            // txtUF
+            // 
+            this.txtUF.Location = new System.Drawing.Point(161, 125);
+            this.txtUF.Name = "txtUF";
+            this.txtUF.Size = new System.Drawing.Size(100, 20);
+            this.txtUF.TabIndex = 18;
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(158, 109);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(24, 13);
+            this.label5.TabIndex = 20;
+            this.label5.Text = "UF:";
+            // 
+            // mskCPF
+            // 
+            this.mskCPF.Location = new System.Drawing.Point(12, 179);
+            this.mskCPF.Mask = "999.999.999-99";
+            this.mskCPF.Name = "mskCPF";
+            this.mskCPF.Size = new System.Drawing.Size(100, 20);
+            this.mskCPF.TabIndex = 21;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(9, 163);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(27, 13);
+            this.label6.TabIndex = 22;
+            this.label6.Text = "CPF";
+            // 
+            // dtpDataNasc
+            // 
+            this.dtpDataNasc.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpDataNasc.Location = new System.Drawing.Point(12, 222);
+            this.dtpDataNasc.Name = "dtpDataNasc";
+            this.dtpDataNasc.Size = new System.Drawing.Size(200, 20);
+            this.dtpDataNasc.TabIndex = 23;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(9, 206);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(107, 13);
+            this.label7.TabIndex = 24;
+            this.label7.Text = "Data de Nascimento:";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(7, 253);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(42, 13);
+            this.label8.TabIndex = 26;
+            this.label8.Text = "Renda:";
+            // 
+            // txtRenda
+            // 
+            this.txtRenda.Location = new System.Drawing.Point(10, 269);
+            this.txtRenda.Name = "txtRenda";
+            this.txtRenda.Size = new System.Drawing.Size(100, 20);
+            this.txtRenda.TabIndex = 25;
+            // 
+            // picFoto
+            // 
+            this.picFoto.Location = new System.Drawing.Point(570, 9);
+            this.picFoto.Name = "picFoto";
+            this.picFoto.Size = new System.Drawing.Size(150, 150);
+            this.picFoto.TabIndex = 27;
+            this.picFoto.TabStop = false;
+            // 
+            // ofdArquivo
+            // 
+            this.ofdArquivo.FileName = "openFileDialog1";
             // 
             // FrmCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(784, 753);
+            this.ClientSize = new System.Drawing.Size(732, 753);
             this.ControlBox = false;
+            this.Controls.Add(this.picFoto);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.txtRenda);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.dtpDataNasc);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.mskCPF);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.txtUF);
             this.Controls.Add(this.cboCidades);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.chkVenda);
@@ -221,6 +326,7 @@
             this.Text = "Cadastro de Clientes";
             this.Load += new System.EventHandler(this.FrmCliente_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picFoto)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -244,5 +350,16 @@
         private System.Windows.Forms.CheckBox chkVenda;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox cboCidades;
+        private System.Windows.Forms.TextBox txtUF;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.MaskedTextBox mskCPF;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.DateTimePicker dtpDataNasc;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox txtRenda;
+        private System.Windows.Forms.PictureBox picFoto;
+        private System.Windows.Forms.OpenFileDialog ofdArquivo;
     }
 }
