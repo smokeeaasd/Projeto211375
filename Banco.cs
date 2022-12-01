@@ -120,7 +120,7 @@ namespace Projeto211375
                         id_venda_cab INT,
                         id_produto INT,
                         qtde DECIMAL(10, 3),
-                        valor_unitado DECIMAL(10, 2),
+                        valor_unitario DECIMAL(10, 2),
                         PRIMARY KEY (id)
                     );", Conexao);
 
